@@ -1,0 +1,5 @@
+# Những file/folder không muốn đẩy sang git
+
+node_modules/
+
+.env
