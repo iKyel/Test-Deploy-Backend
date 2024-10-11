@@ -3,6 +3,7 @@ import morgan from "morgan";
 import cors from "cors";
 import mongoose from "mongoose";
 import 'dotenv/config';
+import { profileRouter } from "./routes/profileRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,6 +23,9 @@ app.use(cors({      // Allow custom origins
 app.get('/', (req, res) => {
     res.send("Hello world!");
 })
+
+// Route for profile
+app.use('/profile', profileRouter);
 
 // Connect to db and load server if success
 try {
