@@ -3,7 +3,6 @@ import morgan from "morgan";
 import cors from "cors";
 import mongoose from "mongoose";
 import 'dotenv/config';
-import { userRoutes } from "./routes/userRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -23,9 +22,6 @@ app.use(cors({      // Allow custom origins
 app.get('/', (req, res) => {
     res.send("Hello world!");
 })
-
-// Routes for users
-app.use('/users', userRoutes);
 
 // Connect to db and load server if success
 try {
