@@ -1,5 +1,12 @@
 import mongoose from "mongoose";
 
+export type UserType = {
+    _id: mongoose.Types.ObjectId;
+    fullName: String,
+    userName: String,
+    password: String
+};
+
 const UserSchema = new mongoose.Schema(
     {
         fullName: {
